@@ -16,6 +16,6 @@ if( JSON.parse(packet.payload.toString('utf8')).hasOwnProperty('produto') ){
 Compartilho aqui um código de envio de um array de objetos JSON para um broker e o recebimento/decodificação dos dados recebidos.
 
 ## Uso
-É necessário ter o Node.js e o NPM instalado instalado no seu computador.
-Depois de clonar o projeto execute o mqtt-server.js em uma instância de terminal e o mqtt-client.js em outra.
+É necessário ter o Node.js e o NPM instalados no seu computador.
+Depois de clonar o projeto, execute o mqtt-server.js em uma instância de terminal e o mqtt-client.js em outra.
 Voila, tanto o broker quanto o cliente recebem e decodificam os dados,podendo ser armazenados em um banco de dados.
