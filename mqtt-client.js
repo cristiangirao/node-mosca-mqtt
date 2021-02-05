@@ -7,22 +7,22 @@ client.on('connect',function(){
         
     });	
     //Array de JSON que serão enviados quando o cliente se conectar ao broker
-	var objetos = [{
-		produto: '001',
+	const objects = [{
+		product: '001',
 		cliente: '1',
-		quantidade: '3'
+		quantity: '3'
 	  },{
-		produto: '002',
+		product: '002',
 		cliente: '2',
-		quantidade: '1'
+		quantity: '1'
 	  },{
-		produto: '003',
+		product: '003',
 		cliente: '3',
-		quantidade: '1'
+		quantity: '1'
 	  }];
-	for( var i = 0 ; i < objetos.length ; i++){
-	  	client.publish('home/teste', JSON.stringify(objetos[i]));    
-	}
+	objects.forEach(function(object){
+		client.publish('home/teste', JSON.stringify(object));    
+	});
    	console.log('conectou');
 });
 
@@ -30,6 +30,6 @@ client.on('connect',function(){
 client.on('message',async function(topic,message){
 	console.log(message.toString());
 	const obj = await  JSON.parse(message.toString());
-	console.log('Produto:',obj.produto);
-	console.log('Quantidade:',obj.quantidade);
+	console.log('Produto:',obj.product);
+	console.log('Quantidade:',obj.quantity);
 });

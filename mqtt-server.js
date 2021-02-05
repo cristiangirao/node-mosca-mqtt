@@ -8,10 +8,10 @@ server.on('clientConnected', function(client) {
 //Evento disparado quando um cliente envia uma mensagem
 server.on('published', async function(packet) {
   try{
-    if( JSON.parse(packet.payload.toString('utf8')).hasOwnProperty('produto') ){
+    if(JSON.parse(packet.payload.toString('utf8')).hasOwnProperty('product')){
       var obj = await JSON.parse(packet.payload.toString('utf8'));
-      console.log('Produto: ',obj.produto);
-      console.log('Quantidade: ',obj.quantidade);
+      console.log('Produto: ',obj.product);
+      console.log('Quantidade: ',obj.quantity);
     }
   }catch(e){
     console.log('Mensagem recebida:',packet.payload.toString('utf8'));
