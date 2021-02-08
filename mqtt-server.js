@@ -10,8 +10,8 @@ server.on('published', async function(packet) {
   try{
     if(JSON.parse(packet.payload.toString('utf8')).hasOwnProperty('product')){
       var obj = await JSON.parse(packet.payload.toString('utf8'));
-      console.log('Produto: ',obj.product);
-      console.log('Quantidade: ',obj.quantity);
+      console.log(`Produto: ${obj.product}`);
+      console.log(`Quantidade: ${obj.quantity}`);
     }
   }catch(e){
     console.log('Mensagem recebida:',packet.payload.toString('utf8'));
